@@ -3,10 +3,11 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Task;
 
 class Counter extends Component
 {
-    public $name = "Codigo";
+    public $name = "Laravel";
     public $title;
 
     public function mount($title)
@@ -16,6 +17,8 @@ class Counter extends Component
 
     public function render()
     {
-        return view('livewire.counter');
+        return view('livewire.counter', [
+            'tasks' => Task::all()
+        ]);
     }
 }
