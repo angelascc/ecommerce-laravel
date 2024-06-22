@@ -1,11 +1,11 @@
 <div>
-    <h2>{{ $title }} {{ $name }}</h2>
-
     @foreach ($tasks as $t)
         <div>
             <p>{{ $t->name }}</p>
         </div>
     @endforeach
 
-    <input wire:model.debounce.10ms="name" type="text">
+    <p>{{$name}}</p>
+    <input wire:model="name" type="text">
+    <button wire:click="addTask">Agregar</button>
 </div>

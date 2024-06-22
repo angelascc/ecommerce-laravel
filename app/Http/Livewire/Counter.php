@@ -7,12 +7,18 @@ use App\Models\Task;
 
 class Counter extends Component
 {
-    public $name = "Laravel";
+    public $name;
     public $title;
 
     public function mount($title)
     {
         $this->title = $title;
+    }
+
+    public function addTask()
+    {
+        Task::create(['name' => $this->name]);
+        $this->name = "";
     }
 
     public function render()
