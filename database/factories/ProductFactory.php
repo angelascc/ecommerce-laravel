@@ -16,8 +16,9 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->word,
             'price' => 200,
-            'description' => $this->fakke()->text($maxNbChars = 200),
-            'thumbnail' => "https://picsum.photos/550/600"
+            'description' => $this->faker->text(200),
+            'thumbnail' => "https://picsum.photos/550/600",
+            'slug' => $this->faker-> word
         ];
     }
 }
