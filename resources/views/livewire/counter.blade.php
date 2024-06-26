@@ -1,7 +1,12 @@
 <div>
+    @if (session()->has('message'))
+        <p>{{ session('message') }}</p>
+    @endif
+
     @foreach ($tasks as $t)
         <div>
             <p>{{ $t->name }}</p>
+            <button wire:click="deleteTask({{ $t->id }})">Eliminar</button>
         </div>
     @endforeach
 

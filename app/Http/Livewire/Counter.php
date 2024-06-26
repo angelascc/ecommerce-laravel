@@ -21,6 +21,12 @@ class Counter extends Component
         $this->name = "";
     }
 
+    public function deleteTask($id)
+    {
+        session()->flash('message', 'Tarea se ha eliminado');
+        Task::destroy($id);
+    }
+
     public function render()
     {
         return view('livewire.counter', [
