@@ -4,10 +4,7 @@
     @endif
 
     @foreach ($tasks as $t)
-        <div>
-            <p>{{ $t->name }}</p>
-            <button wire:click="deleteTask({{ $t->id }})">Eliminar</button>
-        </div>
+        @livewire('list-task', ['task' => $t], key($t->id))
     @endforeach
 
     <p>{{$name}}</p>

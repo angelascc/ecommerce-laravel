@@ -15,6 +15,8 @@ class Counter extends Component
         $this->title = $title;
     }
 
+    protected $listeners = ['deleteTask'];
+
     public function addTask()
     {
         Task::create(['name' => $this->name]);
